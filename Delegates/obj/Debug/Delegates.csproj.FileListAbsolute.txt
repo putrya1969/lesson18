@@ -1,0 +1,15 @@
+C:\Users\D.Putrya\source\repos\Delegates\Delegates\obj\Debug\Delegates.csprojAssemblyReference.cache
+C:\Users\D.Putrya\source\repos\Delegates\Delegates\obj\Debug\Delegates.csproj.CoreCompileInputs.cache
+C:\Users\D.Putrya\source\repos\Delegates\Delegates\bin\Debug\Delegates.exe.config
+C:\Users\D.Putrya\source\repos\Delegates\Delegates\bin\Debug\Delegates.exe
+C:\Users\D.Putrya\source\repos\Delegates\Delegates\bin\Debug\Delegates.pdb
+C:\Users\D.Putrya\source\repos\Delegates\Delegates\obj\Debug\Delegates.exe
+C:\Users\D.Putrya\source\repos\Delegates\Delegates\obj\Debug\Delegates.pdb
+D:\Beetroot\Lesson3\Delegates\Delegates\bin\Debug\Delegates.exe.config
+D:\Beetroot\Lesson3\Delegates\Delegates\bin\Debug\Delegates.exe
+D:\Beetroot\Lesson3\Delegates\Delegates\bin\Debug\Delegates.pdb
+D:\Beetroot\Lesson3\Delegates\Delegates\obj\Debug\Delegates.csproj.AssemblyReference.cache
+D:\Beetroot\Lesson3\Delegates\Delegates\obj\Debug\Delegates.csproj.SuggestedBindingRedirects.cache
+D:\Beetroot\Lesson3\Delegates\Delegates\obj\Debug\Delegates.csproj.CoreCompileInputs.cache
+D:\Beetroot\Lesson3\Delegates\Delegates\obj\Debug\Delegates.exe
+D:\Beetroot\Lesson3\Delegates\Delegates\obj\Debug\Delegates.pdb
