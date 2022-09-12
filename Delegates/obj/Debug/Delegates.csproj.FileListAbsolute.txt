@@ -13,3 +13,10 @@ D:\Beetroot\Lesson3\Delegates\Delegates\obj\Debug\Delegates.csproj.SuggestedBind
 D:\Beetroot\Lesson3\Delegates\Delegates\obj\Debug\Delegates.csproj.CoreCompileInputs.cache
 D:\Beetroot\Lesson3\Delegates\Delegates\obj\Debug\Delegates.exe
 D:\Beetroot\Lesson3\Delegates\Delegates\obj\Debug\Delegates.pdb
+C:\Users\D.Putrya\source\repos\Delegates\lesson18\Delegates\bin\Debug\Delegates.exe.config
+C:\Users\D.Putrya\source\repos\Delegates\lesson18\Delegates\bin\Debug\Delegates.exe
+C:\Users\D.Putrya\source\repos\Delegates\lesson18\Delegates\bin\Debug\Delegates.pdb
+C:\Users\D.Putrya\source\repos\Delegates\lesson18\Delegates\obj\Debug\Delegates.csprojAssemblyReference.cache
+C:\Users\D.Putrya\source\repos\Delegates\lesson18\Delegates\obj\Debug\Delegates.csproj.CoreCompileInputs.cache
+C:\Users\D.Putrya\source\repos\Delegates\lesson18\Delegates\obj\Debug\Delegates.exe
+C:\Users\D.Putrya\source\repos\Delegates\lesson18\Delegates\obj\Debug\Delegates.pdb

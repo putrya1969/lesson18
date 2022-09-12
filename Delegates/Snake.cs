@@ -1,9 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Xml.Linq;
 
 namespace Delegates
 {
@@ -13,6 +10,7 @@ namespace Delegates
         Random random = new Random();
 
         public delegate void SnakeEventHandler();
+        public delegate void SnakeHandler(Snake sender);
 
         public PlayingField PlayingField { get; set; }
         public List<SnakesBodyItem> SnakesBodyItems { get; set; } = new List<SnakesBodyItem>();
@@ -20,21 +18,24 @@ namespace Delegates
 
         public MoveTo MoveDirection;
 
-        public event SnakeEventHandler SnakeMove;
+        public event SnakeHandler SnakeMove;
 
-        public event SnakeEventHandler SnakeGrow;
+        public event SnakeHandler SnakeGrow;
 
         public event SnakeEventHandler GameIsOver;
         public bool EndGame{ get; set; }
 
-        public Snake(KeyPressHandler keyPressHandler, PlayingField playingField)
+        public Snake(KeyPressHandler keyPressHandler, PlayingField playingField, SnakesBodyItem firstSnakeBody)
         {
-            SnakesBodyItems.Add(new SnakesBodyItem(random.Next(1, 50), random.Next(1, 20)));
+            SnakesBodyItems.Add(firstSnakeBody);
             SetDirection(keyPressHandler.currentDirection);
             keyPressHandler.ChangeDirection += SetDirection;
-            Apple = new Apple(random.Next(1, 50), random.Next(1, 20));
             PlayingField = playingField;
             EndGame = false;
+            SnakeMove += Painter.RedrawSnake;
+            SnakeGrow += Program.NewApple;
+            SnakeGrow += Painter.GrowSnake;
+            GameIsOver += Painter.DrawGameOver;
         }
 
         public void Move()
@@ -45,14 +46,13 @@ namespace Delegates
                 GameIsOver?.Invoke();
                 EndGame = true;
             }
-            if ((SnakesBodyItems[0].X == Apple.X) && (SnakesBodyItems[0].Y == Apple.Y))
+            if ((SnakesBodyItems.First().X == Apple.X) && (SnakesBodyItems.First().Y == Apple.Y))
             {
-                Apple = new Apple(random.Next(1, 50), random.Next(1, 20));
-                SnakeGrow?.Invoke();
+                SnakeGrow?.Invoke(this);
             }
             else
             {
-                SnakeMove?.Invoke();
+                SnakeMove?.Invoke(this);
                 Retreat();
             }
         }
@@ -67,23 +67,24 @@ namespace Delegates
 
         void Right()
         {
-            SnakesBodyItems.Insert(0, new SnakesBodyItem(SnakesBodyItems[0].X + 1, SnakesBodyItems[0].Y));
+            SnakesBodyItems.Insert(0, new SnakesBodyItem(SnakesBodyItems.First().X + 1, SnakesBodyItems.First().Y));
         }
         void Left()
         {
-            SnakesBodyItems.Insert(0, new SnakesBodyItem(SnakesBodyItems[0].X - 1, SnakesBodyItems[0].Y));
+            SnakesBodyItems.Insert(0, new SnakesBodyItem(SnakesBodyItems.First().X - 1, SnakesBodyItems.First().Y));
         }
         void Down()
         {
-            SnakesBodyItems.Insert(0, new SnakesBodyItem(SnakesBodyItems[0].X, SnakesBodyItems[0].Y + 1));
+            SnakesBodyItems.Insert(0, new SnakesBodyItem(SnakesBodyItems.First().X, SnakesBodyItems.First().Y + 1));
         }
         void Up()
         {
-            SnakesBodyItems.Insert(0, new SnakesBodyItem(SnakesBodyItems[0].X, SnakesBodyItems[0].Y - 1));
+            SnakesBodyItems.Insert(0, new SnakesBodyItem(SnakesBodyItems.First().X, SnakesBodyItems.First().Y - 1));
         }
 
         void Retreat()
         {
+            //SnakesBodyItems = SnakesBodyItems.Skip(1).ToList();
             SnakesBodyItems.RemoveAt(SnakesBodyItems.Count - 1);
         }
 
